@@ -7,10 +7,6 @@ import HomeScreen from '../screens/HomeScreen'
 import FixtureScreen from '../screens/FixtureScreen'
 
 import color from '../theme/colors'
-import Icon from 'react-native-vector-icons/Ionicons';
-
-const HomeIcon = <Icon name="home-outline" size={30} />
-const FootballIcon = <Icon name="football-outline" size={30} />
 
 const Tab = createBottomTabNavigator()
 
@@ -24,8 +20,21 @@ const TabNavigation: FC = () => {
             justifyContent: 'center',
           },
           activeTintColor: color.active,
-          labelPosition: 'below-icon'
+          labelPosition: 'below-icon',
         }}
+      // screenOptions={({ route }) => ({
+      //   tabBarIcon: ({ focused, color, size }) => {
+      //     let iconName;
+
+      //     if (route.name === 'Home') {
+      //       iconName = "home-outline"
+      //     } else if (route.name === 'Fixture') {
+      //       iconName = "football-outline";
+      //     }
+      //     // You can return any component that you like here!
+      //     return <Icon name={iconName as string} size={size} color={color} />;
+      //   },
+      // })}
       >
         <Tab.Screen
           name="Home"
