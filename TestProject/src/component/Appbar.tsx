@@ -10,6 +10,9 @@ import {
 import colors from '../theme/colors'
 import text from '../theme/text'
 
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { faFutbol } from '@fortawesome/free-regular-svg-icons'
+
 interface Props {
   page: string
 }
@@ -19,7 +22,7 @@ const pageMap: { [key: string]: any } = {
     header: 'News Feed'
   },
   'fixture': {
-    header: 'Game Matches'
+    header: 'Next Fixtures',
   },
   'settings': {
     header: 'Settings'
@@ -35,7 +38,7 @@ const pageMap: { [key: string]: any } = {
 const Appbar: FC<Props> = ({ page = 'default' }) => {
   return (
     <View style={styles.appbar}>
-      <SafeAreaView>
+      <SafeAreaView style={{ flexDirection: 'row', alignItems: 'center' }}>
         <Text
           style={styles.logoText}
         >
@@ -51,7 +54,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 0,
     width: '100%',
-    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: colors.primary,
@@ -59,7 +61,7 @@ const styles = StyleSheet.create({
   },
   logoText: {
     ...(text.logo),
-    color: colors.white
+    color: colors.white,
   },
 })
 

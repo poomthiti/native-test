@@ -14,5 +14,13 @@ export default {
   newsHeader: {
     fontSize: 16,
     fontWeight: "600" as "600"
+  },
+  fixtureText: {
+    fontSize: 16,
+    fontWeight: "500" as "500"
+  },
+  dateText: {
+    fontSize: 14,
+    fontWeight: "500" as "500"
   }
 }

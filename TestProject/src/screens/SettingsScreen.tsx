@@ -1,6 +1,8 @@
 import React, { FC } from 'react'
 import { View, Text, StyleSheet, SafeAreaView, ScrollView } from 'react-native'
 
+import Appbar from '../component/Appbar'
+
 import colors from '../theme/colors'
 import text from '../theme/text'
 

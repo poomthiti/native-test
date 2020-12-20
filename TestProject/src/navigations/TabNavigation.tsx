@@ -30,7 +30,7 @@ const TabNavigation: FC = () => {
           component={HomeScreen}
         />
         <Tab.Screen
-          name="Fixture"
+          name="Fixtures"
           component={FixtureScreen}
         />
         <Tab.Screen

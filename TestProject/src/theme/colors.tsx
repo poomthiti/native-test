@@ -3,5 +3,7 @@ export default {
   white: '#FFF',
   black: '#1B1D0E',
   active: '#1E502E',
-  muted: '#999999'
+  muted: '#999999',
+  border: '#E0E0E0',
+  gadget: '#eeb501'
 }

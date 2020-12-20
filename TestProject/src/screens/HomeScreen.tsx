@@ -2,12 +2,10 @@ import React, { FC } from 'react'
 import {
   View,
   Text,
-  SafeAreaView,
   ScrollView,
   Platform,
   StyleSheet
 } from 'react-native'
-import { absoluteFillObject } from 'react-native-extended-stylesheet'
 
 import ImageCard from '../component/ImageCard'
 import NewsCard from '../component/NewsCard'
