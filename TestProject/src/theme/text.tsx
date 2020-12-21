@@ -22,5 +22,9 @@ export default {
   dateText: {
     fontSize: 14,
     fontWeight: "500" as "500"
-  }
+  },
+  newsContent: {
+    fontSize: 18,
+    fontWeight: "500" as "500"
+  },
 }

@@ -1,13 +1,14 @@
 import React from 'react';
+import { RecoilRoot } from 'recoil'
 
-import Navigation from './src/navigations/Navigation'
 import TabNavigation from './src/navigations/TabNavigation'
 
 const App = () => {
   return (
     <>
-      {/* <Navigation /> */}
-      <TabNavigation />
+      <RecoilRoot>
+        <TabNavigation />
+      </RecoilRoot>
     </>
   )
 }

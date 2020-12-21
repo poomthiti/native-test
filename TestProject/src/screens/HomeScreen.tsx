@@ -22,7 +22,7 @@ const HomeScreen: FC<Props> = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Appbar page='home' />
-      <ScrollView style={styles.content} contentContainerStyle={{ paddingBottom: 16 }}>
+      <ScrollView style={styles.content} contentContainerStyle={{ paddingBottom: 8 }}>
         <ScrollView
           style={styles.imageSlide}
           horizontal
@@ -36,7 +36,7 @@ const HomeScreen: FC<Props> = ({ navigation }) => {
         <View
           style={styles.newsSlide}
         >
-          <NewsCard />
+          <NewsCard navigation={navigation} />
         </View>
       </ScrollView>
     </View>

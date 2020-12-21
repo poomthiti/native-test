@@ -3,8 +3,10 @@ import {
   View,
   Text,
   TouchableOpacity,
-  StyleSheet
+  StyleSheet,
 } from 'react-native';
+
+import EventCard from './EventCard'
 
 import colors from '../theme/colors'
 import text from '../theme/text'
@@ -53,34 +55,22 @@ const LeagueCard: FC<Props> = ({ fixtures = [], country }) => {
 
   const leagueTitle = leagueMap[country as string].league
 
-  const eventCards = fixtures?.map((event: { [key: string]: any }, index: number) => {
-    const { event_date, homeTeam, awayTeam } = event
-    const { date, formatTime } = splitEventDate(event_date as string)
-    const newDateFormat = formatDate(date)
-    return (
-      <View style={styles.textbox} key={`${country}-${index}`}>
-        <View style={styles.dateGrid}>
-          <Text style={styles.dateText}>
-            {newDateFormat}
-          </Text>
-          <Text style={styles.dateText}>
-            {formatTime}
-          </Text>
-        </View>
-        <View style={styles.contentGrid}>
-          <Text style={styles.fixtureText}>
-            {homeTeam["team_name"] ?? 'Home Team'}
-          </Text>
-          <Text style={styles.fixtureText}>
-            {awayTeam["team_name"] ?? 'Away Team'}
-          </Text>
-        </View>
-        <View style={styles.gadgetGrid}>
-          <FontAwesomeIcon icon={faCoins} color={colors.gadget} size={20} />
-        </View>
-      </View>
-    )
-  }) || []
+  const renderEventCard = () => {
+    return fixtures?.map((event: { [key: string]: any }, index: number) => {
+      const { event_date, homeTeam, awayTeam } = event
+      const { date, formatTime } = splitEventDate(event_date as string)
+      const newDateFormat = formatDate(date)
+      return (
+        <EventCard
+          date={newDateFormat}
+          time={formatTime}
+          homeTeam={homeTeam["team_name"] ?? 'No Data'}
+          awayTeam={awayTeam["team_name"] ?? 'No Data'}
+          key={`${country}-${index}`}
+        />
+      )
+    }) || []
+  }
 
   return (
     <>
@@ -102,28 +92,7 @@ const LeagueCard: FC<Props> = ({ fixtures = [], country }) => {
         </View>
       </TouchableOpacity>
       {open ?
-        eventCards
-        // <View style={styles.textbox}>
-        //   <View style={styles.dateGrid}>
-        //     <Text style={styles.dateText}>
-        //       Date
-        //     </Text>
-        //     <Text style={styles.dateText}>
-        //       Time
-        //     </Text>
-        //   </View>
-        //   <View style={styles.contentGrid}>
-        //     <Text style={styles.fixtureText}>
-        //       Home Team
-        //     </Text>
-        //     <Text style={styles.fixtureText}>
-        //       Away Team
-        //     </Text>
-        //   </View>
-        //   <View style={styles.gadgetGrid}>
-        //     <FontAwesomeIcon icon={faCoins} color={colors.gadget} size={20} />
-        //   </View>
-        // </View>
+        renderEventCard()
         :
         null}
     </>

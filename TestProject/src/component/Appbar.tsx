@@ -10,9 +10,6 @@ import {
 import colors from '../theme/colors'
 import text from '../theme/text'
 
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faFutbol } from '@fortawesome/free-regular-svg-icons'
-
 interface Props {
   page: string
 }

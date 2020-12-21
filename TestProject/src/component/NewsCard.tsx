@@ -1,8 +1,12 @@
 import React, { FC } from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
 import colors from '../theme/colors'
 import text from '../theme/text'
+
+interface Props {
+  navigation?: any
+}
 
 const urlArray = [
   require('../assets/images/slide0.jpg'),
@@ -13,12 +17,17 @@ const urlArray = [
   require('../assets/images/slide5.jpg'),
 ]
 
-const NewsCard: FC = () => {
+const NewsCard: FC<Props> = ({ navigation }) => {
   return (
     <>
       {urlArray.map((url, index) => {
         return (
-          <View key={`news-${index}`} style={styles.textbox}>
+          <TouchableOpacity
+            onPress={() => { navigation.navigate('News', { id: index as number }) }}
+            activeOpacity={0.75}
+            style={styles.textbox}
+            key={`news-${index}`}
+          >
             <View style={styles.imageGrid}>
               <Image
                 style={styles.image}
@@ -34,7 +43,7 @@ const NewsCard: FC = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse orci velit, blandit ac metus ut, venenatis hendrerit metus. Mauris efficitur lacinia leo, vitae pulvinar turpis vehicula at. Ut ac sem at orci egestas dapibus. Maecenas ut quam mattis, egestas augue id, dictum erat.
               </Text>
             </View>
-          </View>
+          </TouchableOpacity>
         )
       })}
     </>
