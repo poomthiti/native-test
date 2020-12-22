@@ -8,11 +8,11 @@ import colors from '../theme/colors'
 import text from '../theme/text'
 
 const NewsCard: FC = () => {
-  const predictionArray = useRecoilState(predictionArrayState)
+  const [predictionArray] = useRecoilState(predictionArrayState)
 
   return (
     <>
-      {predictionArray[0].map((item, index) => {
+      {predictionArray.map((item, index) => {
         return (
           <View style={styles.ticketCard} key={`ticket-${index + 1}`}>
             <View style={styles.ticketGrid}>

@@ -41,10 +41,10 @@ const FixtureScreen: FC<Props> = ({ navigation }) => {
         spainFixtures
       ] = await Promise.all([
         getFixtures(2790),
-        // getFixtures(2664),
-        // getFixtures(2755),
-        // getFixtures(2857),
-        // getFixtures(2833),
+        getFixtures(2664),
+        getFixtures(2755),
+        getFixtures(2857),
+        getFixtures(2833),
       ])
       const allFixtures = {
         England: englandFixtures,
